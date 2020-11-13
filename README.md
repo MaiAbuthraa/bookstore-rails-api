@@ -1,24 +1,45 @@
-# README
+### Create API / rails for an online bookstore
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+run:
+- git clone `git@github.com:MaiAbuthraa/bookstore-rails-api.git`
+- cd bookstore-rails-api
+- bundle install
+- rails s -p 9902
 
-Things you may want to cover:
 
-* Ruby version
+Use PostMan:
+- To list all books 
+> http://localhost:9902/books
 
-* System dependencies
+- To create a new 
+> Method: post
+> Url: http://localhost:9902/books
+> Body -> Row -> application/json
+```
+{
+  "book": {
+    "title": "Mybook",
+    "author": "M.abuthraa"
+  }
+}
+```
 
-* Configuration
+###### Note: 
+BooksController return these value:
+``` render json: @book, status: :created, location: @book```
 
-* Database creation
+in the body we will get json response 
+```
+{
+    "id": 4,
+    "title": "Mybook",
+    "author": "M.abuthraa",
+    "created_at": "2020-11-13T10:27:53.552Z",
+    "updated_at": "2020-11-13T10:27:53.552Z"
+}
+```
 
-* Database initialization
+ status: 201 (201: the origin server MUST create the resource before returning the 201 status code.)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+location: Link for created the resource (show)
+> http://localhost:9902/books/4
