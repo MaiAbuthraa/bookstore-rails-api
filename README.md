@@ -39,7 +39,20 @@ in the body we will get json response
 }
 ```
 
- status: 201 (201: the origin server MUST create the resource before returning the 201 status code.)
+ status: 201 (201: the origin server must create the resource before returning the 201 status code.)
 
 location: Link for created the resource (show)
 > http://localhost:9902/books/4
+
+
+If we Send a bad requset :
+status: 422 (422: Unprocessable Entity response status code indicates that the server understands the content type of the request entity, and the syntax of the request entity is correct, but it was unable to process the contained instructions)
+
+The body we will get json response 
+```
+{
+  "title": [
+    "can't be blank"
+  ]
+}
+```
