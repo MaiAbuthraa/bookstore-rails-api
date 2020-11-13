@@ -56,3 +56,5 @@ The body we will get json response
   ]
 }
 ```
+
+For Rails status code, check this website http://www.railsstatuscodes.com/
